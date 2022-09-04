@@ -1,5 +1,10 @@
 const db = require('../../database');
 const { InternalServerError } = require('../erros');
+const { promisify } = require('util');
+
+const dbRun = promisify(db.run).bind(db);
+const dbGet = promisify(db.get).bind(db);
+const dbAll = promisify(db.all).bind(db);
 
 module.exports = {
   adiciona: usuario => {
@@ -9,10 +14,11 @@ module.exports = {
           INSERT INTO usuarios (
             nome,
             email,
-            senhaHash
-          ) VALUES (?, ?, ?)
+            senhaHash,
+            emailVerificado
+          ) VALUES (?, ?, ?, ?)
         `,
-        [usuario.nome, usuario.email, usuario.senhaHash],
+        [usuario.nome, usuario.email, usuario.senhaHash, usuario.emailVerificado],
         erro => {
           if (erro) {
             reject(new InternalServerError('Erro ao adicionar o usuário!'));
@@ -96,5 +102,17 @@ module.exports = {
         }
       );
     });
+  },
+
+  async modificaEmailVerificado(usuario, emailVerificado){
+    try{
+      await dbRun(`UPDATE usuarios SET emailVerificado = ? WHERE id = ?`, [
+        emailVerificado,
+        usuario.id
+      ]);
+    } catch(erro) {
+      console.log(erro)
+      throw new InternalServerError('Erro ao modificar a verficação de e-mail!');
+    }
   }
 };

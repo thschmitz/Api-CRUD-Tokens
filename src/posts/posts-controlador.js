@@ -3,6 +3,7 @@ const { InvalidArgumentError, InternalServerError } = require('../erros');
 
 module.exports = {
   adiciona: async (req, res) => {
+    console.log("Dentro de Adiciona");
     try {
       const post = new Post(req.body);
       await post.adiciona();
@@ -21,6 +22,7 @@ module.exports = {
 
   lista: async (req, res) => {
     try {
+      console.log("Dentro de lista")
       const posts = await Post.lista();
       res.send(posts);
     } catch (erro) {

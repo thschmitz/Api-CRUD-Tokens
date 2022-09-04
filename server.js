@@ -1,8 +1,15 @@
 const app = require('./app');
-const port = 3000;
+const port = 5000;
 const db = require('./database');
 require("dotenv").config();
-require("./redis/blacklist")
+require("./redis/blocklist-access-token")
+require("./redis/allowlist-refresh-token")
+
+app.use((req,res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
+})
 
 const routes = require('./rotas');
 routes(app);
