@@ -1,0 +1,21 @@
+{
+  "name": "api-crud-token",
+  "version": "1.0.0",
+  "description": "> Um blog simples em Node.js",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thschmitz/Api-CRUD-Tokens.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thschmitz/Api-CRUD-Tokens/issues"
+  },
+  "homepage": "https://github.com/thschmitz/Api-CRUD-Tokens#readme"
+}
