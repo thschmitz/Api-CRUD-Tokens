@@ -1,30 +1,24 @@
 {
-  "name": "blog-do-codigo",
+  "name": "api-crud-token",
   "version": "1.0.0",
-  "description": "Um blog simples em Node.js",
-  "main": "server.js",
-  "engines": {
-    "node": "14.x"
-  },
+  "description": "> Um blog simples em Node.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thschmitz/Api-CRUD-Tokens.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thschmitz/Api-CRUD-Tokens/issues"
+  },
+  "homepage": "https://github.com/thschmitz/Api-CRUD-Tokens#readme",
   "dependencies": {
-    "aws": "^0.0.3-2",
-    "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.0",
-    "dotenv": "^16.0.1",
-    "express": "^4.18.1",
-    "jsonwebtoken": "^8.5.1",
-    "moment": "^2.29.4",
-    "nodemailer": "^6.4.8",
-    "nodemon": "^2.0.2",
-    "passport": "^0.6.0",
-    "passport-http-bearer": "^1.0.1",
-    "passport-local": "^1.0.0",
-    "redis": "^3.0.2",
-    "sqlite3": "^5.0.10"
+    "express": "^4.18.1"
   }
 }
