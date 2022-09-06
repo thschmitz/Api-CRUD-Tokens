@@ -4,8 +4,12 @@
   "description": "> Um blog simples em Node.js",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "dev": "react-scripts start",
+    "start": "serve -s build",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,7 @@
     "passport-http-bearer": "^1.0.1",
     "passport-local": "^1.0.0",
     "redis": "^4.3.1",
+    "serve": "^14.0.1",
     "sqlite3": "^5.0.11"
   },
   "engines": {
