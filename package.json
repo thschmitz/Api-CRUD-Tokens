@@ -20,7 +20,8 @@
   "homepage": "https://github.com/thschmitz/Api-CRUD-Tokens#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "heroku": "^7.63.0"
+    "heroku": "^7.63.0",
+    "nodemailer": "^6.7.8"
   },
   "engines": {
     "node": "16.16.0"
