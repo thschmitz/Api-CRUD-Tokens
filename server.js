@@ -5,7 +5,7 @@ require("dotenv").config();
 require("./redis/blocklist-access-token")
 require("./redis/allowlist-refresh-token")
 
-app.get('/', (req, res) => {res.send('Olá pessoa!')});
+app.get('/', (req, res) => {res.send('APP IS RUNNING')});
 
 app.use((req,res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
