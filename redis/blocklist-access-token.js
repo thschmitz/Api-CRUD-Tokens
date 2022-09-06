@@ -1,5 +1,5 @@
 const redis = require("redis");
-const blocklist = redis.createClient({ prefix: "blocklist-access-token:", port: 6379 });
+const blocklist = redis.createClient({ prefix: "blocklist-access-token:" });
 const manipulaLista = require("./manipula-lista");
 const manipulaBlocklist = manipulaLista(blocklist)
 
