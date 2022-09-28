@@ -89,6 +89,7 @@ module.exports = {
 
   lista: async (req, res) => {
     const usuarios = await Usuario.lista();
+    console.log("Fui chamado")
     res.json(usuarios);
   },
 
